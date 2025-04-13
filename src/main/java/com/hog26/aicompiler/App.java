@@ -1,9 +1,9 @@
 package com.hog26.aicompiler;
 
+import atlantafx.base.theme.PrimerDark;
+import atlantafx.base.theme.PrimerLight;
 import fr.brouillard.oss.cssfx.CSSFX;
-import io.github.palexdev.materialfx.theming.JavaFXThemes;
-import io.github.palexdev.materialfx.theming.MaterialFXStylesheets;
-import io.github.palexdev.materialfx.theming.UserAgentBuilder;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -16,7 +16,7 @@ public class App extends Application {
     public void start(Stage stage) throws IOException {
 
         //Instruction from The library of MaterialFX to implement material design
-        CSSFX.start();
+    /*    CSSFX.start();
         UserAgentBuilder.builder()
                 .themes(JavaFXThemes.MODENA)
                 .themes(MaterialFXStylesheets.forAssemble(true))
@@ -24,7 +24,8 @@ public class App extends Application {
                 .setResolveAssets(true)
                 .build()
                 .setGlobal();
-
+*/
+        Application.setUserAgentStylesheet( new PrimerLight().getUserAgentStylesheet());
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("appview.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1080, 600);
         stage.setTitle("AI Compiler");
